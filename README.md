@@ -16,7 +16,7 @@ libraries/tools - React.js, react-chart.js
 A data visualization tool that displays the current and historical data on coronavirus globally, those of us who are watching closely to where we stand against the virus, as well as a close to the pandemic, can get an accurate and up to date look at some of the information helping guide health officials efforts.
 
 ## target users
-The target users are people who are interested in seeing the numbers and data visually, looking to compare data amongst countries and stay up to date with where we are in our efforts to overcome the pandemic. 
+Anyone who is interested in seeing the numbers and data visually, looking to compare data amongst countries and stay up to date with where we are in our efforts to overcome the pandemic. 
 
 
 ## wireframe
