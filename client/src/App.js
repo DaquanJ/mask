@@ -1,9 +1,10 @@
 import './App.css';
+import LineChart from './components/lineChart';
 
 function App() {
   return (
     <div>
-      <h1> Covid Tracker App </h1>
+      <LineChart />
     </div>
   );
 }
