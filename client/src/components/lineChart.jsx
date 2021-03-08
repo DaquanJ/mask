@@ -31,10 +31,9 @@ const LineChart = () => {
     useEffect(() => {
         async function getData() {
             try {
-                const res = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=10')
+                const res = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=365')
                 const newChart = modifiedData(res.data)
                 setHistoricalData(newChart);
-                console.log(res.data);
             } catch (error) {
                 console.error(error)
             }
@@ -50,31 +49,44 @@ const LineChart = () => {
 
                 <Line
                     data={{
-                        labels: historicalData.map(date => date.date),
+                        labels: historicalData.map(({ date }) => date),
                         datasets: [
                             {
-                                label: 'Total Cases',
-                                data: historicalData.map(cases => cases.cases),
-                                fill: false,
-                                backgroundColor: 'rgb(255,69,0)',
-                                borderColor: 'rgba(255, 99, 132, 0.2)',
+                                label: 'Cases',
+                                data: historicalData.map(({ cases }) => cases),
+                                borderColor: '#3333ff',
+                                fill: true,
                             },
                             {
-                                label: 'Total Deaths',
-                                data: historicalData.map(deaths => deaths.deaths),
+                                label: 'Deaths',
+                                data: historicalData.map(({ deaths }) => deaths),
                                 fill: true,
-                                backgroundColor: 'rgb(255, 99, 132)',
-                                borderColor: 'rgba(255, 99, 132, 0.2)',
+                                backgroundColor: 'rgba(255,0,0,0.5)',
+                                borderColor: 'red',
                             },
                             {
-                                label: 'Total Recovered',
-                                data: historicalData.map(recovered => recovered.recovered),
+                                label: 'Recovered',
+                                data: historicalData.map(({ recovered }) => recovered),
                                 fill: true,
-                                backgroundColor: 'rgb(255, 99, 132)',
-                                borderColor: 'rgba(255, 99, 132, 0.2)',
+                                backgroundColor: 'rgb(0,191,255, 0.5)',
+                                borderColor: 'rgb(65,105,225)',
                             },
 
                         ],
+                    }}
+
+                    options={{
+                        scales: {
+                            xAxes: [
+                                {
+                                    type: "time",
+                                    time: {
+                                        parser: "MM/DD/YY",
+                                        tooltipFormat: "ll",
+                                    },
+                                },
+                            ]
+                        }
                     }}
                 />
             }
