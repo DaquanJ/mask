@@ -1,11 +1,11 @@
 import './App.css';
-import Doughnut from './components/doughnut';
+import DoughnutChart from './components/doughnutChart';
 import LineChart from './components/lineChart';
 
 function App() {
   return (
     <div>
-      <Doughnut />
+      <DoughnutChart />
       <LineChart />
     </div>
   );
