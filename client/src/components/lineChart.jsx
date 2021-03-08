@@ -44,7 +44,7 @@ const LineChart = () => {
 
     return (
         <div>
-            <h1> Graph </h1>
+            <h1> Worldwide </h1>
             {historicalData.length > 0 &&
 
                 <Line
