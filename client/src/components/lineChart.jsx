@@ -6,29 +6,35 @@ const LineChart = () => {
 
     const [historicalData, setHistoricalData] = useState([]);
 
-    function modifiedData(data, caseType = 'cases') {
+    function modifiedData(data) {
         let chart = [];
         let point;
+
         for (let date in data.cases) {
             if (point) {
                 let newPoint = {
-                    x: date,
-                    y: data[caseType][date] - point
+                    date: date,
+                    cases: data.cases[date],
+                    deaths: data.deaths[date],
+                    recovered: data.recovered[date],
                 };
                 chart.push(newPoint);
             }
-            point = data[caseType][date]
+            point = data
         }
+        console.log(chart)
         return chart;
     }
+
+
 
     useEffect(() => {
         async function getData() {
             try {
-                const res = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=120')
+                const res = await axios.get('https://disease.sh/v3/covid-19/historical/all?lastdays=10')
                 const newChart = modifiedData(res.data)
                 setHistoricalData(newChart);
-                console.log(historicalData);
+                console.log(res.data);
             } catch (error) {
                 console.error(error)
             }
@@ -44,15 +50,30 @@ const LineChart = () => {
 
                 <Line
                     data={{
-                        labels: historicalData.map(date => date.x),
+                        labels: historicalData.map(date => date.date),
                         datasets: [
                             {
-                                label: 'Cases',
-                                data: historicalData.map(cases => cases.y),
+                                label: 'Total Cases',
+                                data: historicalData.map(cases => cases.cases),
                                 fill: false,
+                                backgroundColor: 'rgb(255,69,0)',
+                                borderColor: 'rgba(255, 99, 132, 0.2)',
+                            },
+                            {
+                                label: 'Total Deaths',
+                                data: historicalData.map(deaths => deaths.deaths),
+                                fill: true,
                                 backgroundColor: 'rgb(255, 99, 132)',
                                 borderColor: 'rgba(255, 99, 132, 0.2)',
                             },
+                            {
+                                label: 'Total Recovered',
+                                data: historicalData.map(recovered => recovered.recovered),
+                                fill: true,
+                                backgroundColor: 'rgb(255, 99, 132)',
+                                borderColor: 'rgba(255, 99, 132, 0.2)',
+                            },
+
                         ],
                     }}
                 />
