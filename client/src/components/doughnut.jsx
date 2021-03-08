@@ -16,7 +16,8 @@ const Doughnut = () => {
                 console.error(e)
             }
         }
-    })
+        fetchData();
+    }, [])
 
     return (
         <div>
