@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import axios from 'axios';
 
+import '../styles/lineChart.css'
+
 const LineChart = () => {
 
     const [historicalData, setHistoricalData] = useState([]);
@@ -44,7 +46,9 @@ const LineChart = () => {
 
     return (
         <div>
-            <h1> Worldwide </h1>
+            <div className='title'>
+                <h2 id='heading' > Worldwide Cases over the last 365 Days </h2>
+            </div>
             {historicalData.length > 0 &&
 
                 <Line
