@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
+import '../styles/liveData.css';
 
 const LiveData = () => {
 
@@ -21,25 +22,25 @@ const LiveData = () => {
 
     return (
         <div>
-            <h1> Live ! </h1>
             {
                 data.map((info) => (
                     <div className='cards' >
-                        <div>
+                        <div className='cases' >
                             <p> Cases </p>
-                            <h1> + {info.todayCases} </h1>
+                            <h2 id='cases' > + {info.todayCases} </h2>
                             <p> {info.cases} Total </p>
                         </div>
-                        <div>
+                        <div className='deaths' >
                             <p> Deaths </p>
-                            <h1> + {info.todayDeaths} </h1>
+                            <h2 id='deaths'> + {info.todayDeaths} </h2>
                             <p> {info.deaths} Total </p>
                         </div>
-                        <div>
+                        <div className='recovered' >
                             <p> Recovered </p>
-                            <h1> + {info.todayRecovered} </h1>
+                            <h2 id='recovered' > + {info.todayRecovered} </h2>
                             <p> {info.recovered} Total </p>
                         </div>
+
                     </div>
 
                 ))
