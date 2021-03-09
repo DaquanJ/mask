@@ -1,0 +1,6 @@
+.title {
+    display: flex;
+    text-align: center;
+    padding: 1.2%;
+    color: rgba(255, 0, 0, 0.5);
+}

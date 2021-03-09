@@ -1,0 +1,41 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    margin-left: 20%;
+}
+
+.cards div {
+    border-radius: 1.5%;
+    box-shadow: .3px .3px 1px .3px darkgray;
+    margin-left: auto;
+    padding: 5%;
+    width: 75%;
+}
+
+.cards div>p {
+    color: gray;
+}
+
+.cases {
+    border-bottom: 5px ridge #3333ff;
+}
+
+.deaths {
+    border-bottom: 5px ridge rgba(255, 0, 0, 0.8);
+}
+
+.recovered {
+    border-bottom: 5px ridge rgb(0, 191, 255, 0.8);
+}
+
+#cases {
+    color: #3333ff;
+}
+
+#deaths {
+    color: rgba(255, 0, 0, 0.8);
+}
+
+#recovered {
+    color: rgb(0, 191, 255, 0.8);
+}
