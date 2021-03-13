@@ -1,7 +1,8 @@
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 20%);
-    margin-left: 20%;
+    justify-content: center;
+    margin-bottom: 1%;
 }
 
 .cards div {
