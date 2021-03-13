@@ -4,6 +4,8 @@ import Countries from './components/countries';
 import LineChart from './components/lineChart';
 import LiveData from './components/LiveData';
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div className='App'>
