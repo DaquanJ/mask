@@ -7,7 +7,7 @@ import '../styles/lineChart.css'
 const LineChart = () => {
 
     const [historicalData, setHistoricalData] = useState([]);
-    const [days, setDays] = useState({});
+    const [days, setDays] = useState({ lastDays: '365' });
 
 
     function modifiedData(data) {
@@ -64,61 +64,62 @@ const LineChart = () => {
 
 
     return (
-        <div>
-            <form onChange={(e) => handleChange(e)} onSubmit={(event) => handleSubmit(event)} >
+        <div className='chart' >
+
+            <form className='view' onChange={(e) => handleChange(e)} onSubmit={(event) => handleSubmit(event)} >
                 <input type="text" id='lastDays' placeholder='Choose Days to view' />
-                <input type="submit" />
+                <input type="submit" value={`View last ${days.lastDays} days`} />
             </form>
-            <div className='chart' >
-                {historicalData.length > 0 &&
 
-                    <Line
-                        data={{
-                            labels: historicalData.map(({ date }) => date),
-                            datasets: [
-                                {
-                                    label: 'Cases',
-                                    data: historicalData.map(({ cases }) => cases),
-                                    borderColor: '#3333ff',
-                                    fill: true,
-                                },
-                                {
-                                    label: 'Deaths',
-                                    data: historicalData.map(({ deaths }) => deaths),
-                                    fill: true,
-                                    backgroundColor: 'rgba(255,0,0,0.5)',
-                                    borderColor: 'red',
-                                },
-                                {
-                                    label: 'Recovered',
-                                    data: historicalData.map(({ recovered }) => recovered),
-                                    fill: true,
-                                    backgroundColor: 'rgb(0,191,255, 0.5)',
-                                    borderColor: 'rgb(65,105,225)',
-                                },
+            {historicalData.length > 0 &&
 
-                            ],
-                        }}
+                <Line
+                    data={{
+                        labels: historicalData.map(({ date }) => date),
+                        datasets: [
+                            {
+                                label: 'Cases',
+                                data: historicalData.map(({ cases }) => cases),
+                                borderColor: '#3333ff',
+                                fill: true,
+                            },
+                            {
+                                label: 'Deaths',
+                                data: historicalData.map(({ deaths }) => deaths),
+                                fill: true,
+                                backgroundColor: 'rgba(255,0,0,0.5)',
+                                borderColor: 'red',
+                            },
+                            {
+                                label: 'Recovered',
+                                data: historicalData.map(({ recovered }) => recovered),
+                                fill: true,
+                                backgroundColor: 'rgb(0,191,255, 0.5)',
+                                borderColor: 'rgb(65,105,225)',
+                            },
 
-                        options={{
-                            scales: {
-                                xAxes: [
-                                    {
-                                        type: "time",
-                                        time: {
-                                            parser: "MM/DD/YY",
-                                            tooltipFormat: "ll",
-                                        },
+                        ],
+                    }}
+
+                    options={{
+                        scales: {
+                            xAxes: [
+                                {
+                                    type: "time",
+                                    time: {
+                                        parser: "MM/DD/YY",
+                                        tooltipFormat: "ll",
                                     },
-                                ]
-                            }
-                        }}
-                    />
-                }
-
-            </div>
+                                },
+                            ]
+                        }
+                    }}
+                />
+            }
 
         </div>
+
+
     );
 }
 
