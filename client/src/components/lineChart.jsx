@@ -45,10 +45,7 @@ const LineChart = () => {
 
 
     return (
-        <div>
-            <div className='title'>
-                <h2 id='heading' > Worldwide Cases over the last 365 Days </h2>
-            </div>
+        <div className='chart' >
             {historicalData.length > 0 &&
 
                 <Line

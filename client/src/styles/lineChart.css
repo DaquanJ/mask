@@ -4,3 +4,10 @@
     padding: 1.2%;
     color: rgba(255, 0, 0, 0.5);
 }
+
+.chart {
+    box-shadow: .3px .3px 1px .3px darkgray;
+    border-radius: .5%;
+    margin-top: auto;
+
+}
