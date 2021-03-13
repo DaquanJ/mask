@@ -22,8 +22,13 @@ const Countries = () => {
     return (
         <div>
             <select name="" id="">
-                <option value="country"> us </option>
+                {
+                    countries.map(country =>
+                        <option value="country"> {country.country} </option>
+                    )
+                }
             </select>
+
         </div>
     );
 }
