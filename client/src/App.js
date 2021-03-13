@@ -6,7 +6,7 @@ import LiveData from './components/LiveData';
 function App() {
   return (
     <div className='App'>
-      <h1> Covid-19 Tracker </h1>
+      <h1> Mask </h1>
       <LiveData />
       <LineChart />
     </div>
