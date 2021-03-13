@@ -11,8 +11,8 @@ const LiveData = () => {
         const fetchData = async () => {
             try {
                 const res = await axios.get('https://disease.sh/v3/covid-19/all')
-                setData([res.data])
-                console.log([res.data])
+                setData(res.data)
+                console.log(res.data)
             } catch (e) {
                 console.error(e)
             }
@@ -23,27 +23,27 @@ const LiveData = () => {
     return (
         <div>
             {
-                data.map((info) => (
-                    <div className='cards' >
-                        <div className='cases' >
-                            <p> Cases </p>
-                            <h2 id='cases' > + {info.todayCases} </h2>
-                            <p> {info.cases} Total </p>
-                        </div>
-                        <div className='deaths' >
-                            <p> Deaths </p>
-                            <h2 id='deaths'> + {info.todayDeaths} </h2>
-                            <p> {info.deaths} Total </p>
-                        </div>
-                        <div className='recovered' >
-                            <p> Recovered </p>
-                            <h2 id='recovered' > + {info.todayRecovered} </h2>
-                            <p> {info.recovered} Total </p>
-                        </div>
 
+                <div className='cards' >
+                    <div className='cases' >
+                        <p> Cases </p>
+                        <h2 id='cases' > + {data.todayCases} </h2>
+                        <p> {data.cases} Total </p>
+                    </div>
+                    <div className='deaths' >
+                        <p> Deaths </p>
+                        <h2 id='deaths'> + {data.todayDeaths} </h2>
+                        <p> {data.deaths} Total </p>
+                    </div>
+                    <div className='recovered' >
+                        <p> Recovered </p>
+                        <h2 id='recovered' > + {data.todayRecovered} </h2>
+                        <p> {data.recovered} Total </p>
                     </div>
 
-                ))
+                </div>
+
+
             }
         </div>
     )
