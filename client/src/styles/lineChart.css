@@ -13,27 +13,23 @@
 }
 
 .view {
-    display: flex;
-    width: 25%;
+    display: grid;
+    grid-template-columns: repeat(2, 15%);
+    justify-content: end;
     padding: 1%;
+
 }
 
-.view input[type=text] {
+.view input[type='text'] {
     padding: 2%;
     border: none;
     border-bottom: 2px solid red;
-    color: black;
-
+    color: gray;
 }
 
-.view input[type=submit] {
-    color: grey;
-    border: none;
-    border-bottom: 2px solid blue;
-    background-color: white;
-    width: auto;
-    margin: 5%;
-    padding: 2%;
+.view input[type='text']:hover {
+    border-bottom: 2px solid rgba(255, 16, 39, 0.5);
+    transition: all 200ms;
 }
 
 .view input[type='text']:focus {
@@ -42,10 +38,17 @@
     color: grey;
 }
 
-.view input[type=text]:hover {
-    border-bottom: 2px solid rgba(255, 16, 39, 0.5);
-    transition: all 200ms;
+
+.view input[type='submit'] {
+    color: grey;
+    border: none;
+    border-bottom: 2px solid blue;
+    background-color: white;
+    width: auto;
+    padding: 2%;
 }
+
+
 
 .view input[type='submit']:hover {
     border-bottom: 2px ridge rgba(0, 111, 255, 0.53);
