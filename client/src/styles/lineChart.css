@@ -11,3 +11,44 @@
     margin-top: auto;
 
 }
+
+.view {
+    display: flex;
+    width: 25%;
+    padding: 1%;
+}
+
+.view input[type=text] {
+    padding: 2%;
+    border: none;
+    border-bottom: 2px solid red;
+    color: black;
+
+}
+
+.view input[type=submit] {
+    color: grey;
+    border: none;
+    border-bottom: 2px solid blue;
+    background-color: white;
+    width: auto;
+    margin: 5%;
+    padding: 2%;
+}
+
+.view input[type='text']:focus {
+    outline: 0;
+    background: transparent;
+    color: grey;
+}
+
+.view input[type=text]:hover {
+    border-bottom: 2px solid rgba(255, 16, 39, 0.5);
+    transition: all 200ms;
+}
+
+.view input[type='submit']:hover {
+    border-bottom: 2px ridge rgba(0, 111, 255, 0.53);
+    transition: all 200ms;
+    cursor: pointer;
+}
