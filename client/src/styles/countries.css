@@ -1,0 +1,53 @@
+.country-btn {
+    background-color: white;
+    border: none;
+    box-shadow: .3px .3px 1px .3px darkgray;
+    margin-left: auto;
+    padding: 2.5%;
+    width: auto;
+
+}
+
+.countries {
+    position: relative;
+    display: inline-block;
+}
+
+#country {
+    position: absolute;
+    display: none;
+    background-color: white;
+    box-shadow: .3px .3px 1px .3px darkgray;
+    width: auto;
+    z-index: 1;
+
+    /* props for scroll bar  */
+    max-height: 1000px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+#country-link {
+    text-decoration: none;
+}
+
+#country li {
+    color: black;
+    padding: 12px;
+    width: auto;
+    display: block;
+}
+
+#country li:hover {
+    background-color: #f1f1f1;
+}
+
+.countries:hover #country {
+    display: block;
+}
+
+.countries:hover .country-btn {
+    border: 1px solid black;
+}
