@@ -11,3 +11,8 @@
   color: rgb(192, 192, 192, 0.9);
 
 }
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
