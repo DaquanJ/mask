@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
+import '../styles/countries.css';
+
+import { Link } from 'react-router-dom';
+
 const Countries = () => {
 
     const [countries, setCountries] = useState([]);
@@ -20,15 +24,15 @@ const Countries = () => {
     }, [])
 
     return (
-        <div>
-            <select name="" id="">
+        <div className='countries'>
+            <button className='country-btn' > WorldWide ▼ </button>
+            <div id='country' >
                 {
                     countries.map(country =>
-                        <option value="country"> {country.country} </option>
+                        <Link id='country-link' to={`/${country.country}`}> <li> {country.country} </li>  </Link>
                     )
                 }
-            </select>
-
+            </div>
         </div>
     );
 }
