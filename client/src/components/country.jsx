@@ -9,7 +9,7 @@ const Country = ({ match }) => {
 
     async function getLiveData() {
         try {
-            const res = await axios.get('https://disease.sh/v3/covid-19/countries/uk?strict=true')
+            const res = await axios.get(`https://disease.sh/v3/covid-19/countries/${match.params.country}?strict=true`)
             setLiveData(res.data)
             console.log(res.data)
         } catch (error) {
@@ -19,15 +19,13 @@ const Country = ({ match }) => {
 
     async function getChartData() {
         try {
-            const res = await axios.get('https://disease.sh/v3/covid-19/historical/uk?lastdays=30')
+            const res = await axios.get(`https://disease.sh/v3/covid-19/historical/${match.params.country}?lastdays=30`)
             setChartData(res.data)
             console.log(res.data)
         } catch (error) {
             console.error(error)
         }
     }
-
-
 
     useEffect(() => {
         getLiveData();
@@ -36,7 +34,7 @@ const Country = ({ match }) => {
 
     return (
         <div>
-            Country
+            <h1> {liveData.country} </h1>
         </div>
     );
 }
