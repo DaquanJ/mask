@@ -74,6 +74,8 @@ const Country = ({ match }) => {
     return (
         <div>
 
+            {/* LIVE DATA */}
+
             {
 
                 <div className='cards' >
@@ -98,9 +100,11 @@ const Country = ({ match }) => {
 
             }
 
-            <div className='chart' >
+            {/* CHART DATA */}
 
+            <div className='chart' >
                 <form className='view' onChange={(e) => handleChange(e)} onSubmit={(event) => handleSubmit(event)} >
+                    <p> {liveData.country} </p>
                     <input type="text" id='lastDays' placeholder='Choose number of Days' />
                     <input type="submit" value={`View last ${days.lastDays} days`} />
                 </form>
