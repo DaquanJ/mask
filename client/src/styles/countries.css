@@ -7,6 +7,10 @@
 
 }
 
+.country-btn:hover {
+    background-color: #f1f1f1;
+}
+
 .countries {
     position: relative;
     display: inline-block;
