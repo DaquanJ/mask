@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import axios from 'axios';
 
-import '../styles/lineChart.css'
+import '../styles/ChartData.css'
 
 const ChartData = () => {
 
@@ -65,7 +65,7 @@ const ChartData = () => {
                 <input type="submit" value={`View last ${days.lastDays} days`} />
             </form>
 
-            {historicalData.length > 0 &&
+            {historicalData.length > 0 ?
 
                 <Line
                     data={{
@@ -109,6 +109,7 @@ const ChartData = () => {
                         }
                     }}
                 />
+                : <p id='not-found' > ...  </p>
             }
 
         </div>
