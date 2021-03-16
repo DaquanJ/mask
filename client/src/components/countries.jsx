@@ -25,7 +25,7 @@ const Countries = () => {
 
     return (
         <div className='countries'>
-            <button className='country-btn' > WorldWide ▼ </button>
+            <Link to='/' >  <button className='country-btn' > World Wide ▼ </button> </Link>
             <div id='country' >
                 {
                     countries.map(country =>
