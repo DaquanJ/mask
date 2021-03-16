@@ -58,7 +58,7 @@ const Country = ({ match }) => {
     useEffect(() => {
         getLiveData();
         getChartData();
-    }, [])
+    }, [match.params.country])
 
 
     function handleChange(e) {
