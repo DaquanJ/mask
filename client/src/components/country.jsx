@@ -7,7 +7,29 @@ const Country = ({ match }) => {
 
     const [liveData, setLiveData] = useState([])
     const [chartData, setChartData] = useState([])
-    const [days, setDays] = useState([]);
+    const [days, setDays] = useState({ lastDays: '365' });
+
+
+    function modifiedData(data) {
+        let chart = [];
+        let point;
+
+        for (let date in data.cases) {
+            if (point) {
+                let newPoint = {
+                    date: date,
+                    cases: data.cases[date],
+                    deaths: data.deaths[date],
+                    recovered: data.recovered[date],
+                };
+                chart.push(newPoint);
+            }
+            point = data
+        }
+
+        return chart;
+    }
+
 
 
     async function getLiveData() {
@@ -22,9 +44,10 @@ const Country = ({ match }) => {
 
     async function getChartData() {
         try {
-            const res = await axios.get(`https://disease.sh/v3/covid-19/historical/${match.params.country}?lastdays=30`)
-            setChartData(res.data)
-            console.log(res.data)
+            const res = await axios.get(`https://disease.sh/v3/covid-19/historical/${match.params.country}?lastdays=${days.lastDays}`)
+            const newData = modifiedData(res.data.timeline)
+            setChartData(newData)
+            console.log(newData)
         } catch (error) {
             console.error(error)
         }
