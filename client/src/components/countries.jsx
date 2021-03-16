@@ -29,7 +29,7 @@ const Countries = () => {
             <div id='country' >
                 {
                     countries.map(country =>
-                        <Link id='country-link' to={`/${country.country}`}> <li> {country.country} </li>  </Link>
+                        <Link key={country.country} id='country-link' to={`/${country.country}`}> <li> {country.country} </li>  </Link>
                     )
                 }
             </div>
