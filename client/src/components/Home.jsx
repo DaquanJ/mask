@@ -1,10 +1,12 @@
 import React from 'react';
+import ChartData from './ChartData';
+import LiveData from './LiveData';
 
 const Home = () => {
     return (
         <div>
             <LiveData />
-            <LineChart />
+            <ChartData />
         </div>
     );
 }
