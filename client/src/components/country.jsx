@@ -34,7 +34,30 @@ const Country = ({ match }) => {
 
     return (
         <div>
-            <h1> {liveData.country} </h1>
+
+            {
+
+                <div className='cards' >
+                    <div className='cases' >
+                        <p> Cases </p>
+                        <h2 id='cases' > + {liveData.todayCases} </h2>
+                        <p> {liveData.cases} Total </p>
+                    </div>
+                    <div className='deaths' >
+                        <p> Deaths </p>
+                        <h2 id='deaths'> + {liveData.todayDeaths} </h2>
+                        <p> {liveData.deaths} Total </p>
+                    </div>
+                    <div className='recovered' >
+                        <p> Recovered </p>
+                        <h2 id='recovered' > + {liveData.todayRecovered} </h2>
+                        <p> {liveData.recovered} Total </p>
+                    </div>
+
+                </div>
+
+
+            }
         </div>
     );
 }
