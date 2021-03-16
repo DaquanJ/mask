@@ -14,10 +14,16 @@
 
 .view {
     display: grid;
-    grid-template-columns: repeat(2, 15%);
+    grid-template-columns: 60% 15% 15%;
     justify-content: end;
     padding: 1%;
 
+}
+
+.view p {
+    font-weight: bold;
+    font-size: 2rem;
+    color: rgb(192, 192, 192, 0.9)
 }
 
 .view input[type='text'] {
