@@ -4,9 +4,13 @@
     width: auto;
 }
 
+#header-link {
+    text-decoration: none;
+}
 
 
-.Home h1 {
+
+.App h1 {
     text-align: start;
     font-size: 4rem;
     padding: 1%;
