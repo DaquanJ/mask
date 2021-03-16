@@ -3,17 +3,3 @@
   width: 95%;
 
 }
-
-.App h1 {
-  text-align: start;
-  font-size: 4rem;
-  padding: 1%;
-  color: rgb(192, 192, 192, 0.9);
-
-}
-
-.header {
-  display: grid;
-  grid-template-columns: 90% 20%;
-  width: auto;
-}
