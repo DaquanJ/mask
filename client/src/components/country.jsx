@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Line } from 'react-chartjs-2';
 
+import '../styles/ChartData.css'
 
 const Country = ({ match }) => {
 
@@ -109,50 +110,51 @@ const Country = ({ match }) => {
                     <input type="submit" value={`View last ${days.lastDays} days`} />
                 </form>
 
-                {chartData.length > 0 &&
-
-                    <Line
-                        data={{
-                            labels: chartData.map(({ date }) => date),
-                            datasets: [
-                                {
-                                    label: 'Cases',
-                                    data: chartData.map(({ cases }) => cases),
-                                    borderColor: '#3333ff',
-                                    fill: true,
-                                },
-                                {
-                                    label: 'Deaths',
-                                    data: chartData.map(({ deaths }) => deaths),
-                                    fill: true,
-                                    backgroundColor: 'rgba(255,0,0,0.5)',
-                                    borderColor: 'red',
-                                },
-                                {
-                                    label: 'Recovered',
-                                    data: chartData.map(({ recovered }) => recovered),
-                                    fill: true,
-                                    backgroundColor: 'rgb(0,191,255, 0.5)',
-                                    borderColor: 'rgb(65,105,225)',
-                                },
-
-                            ],
-                        }}
-
-                        options={{
-                            scales: {
-                                xAxes: [
+                {
+                    chartData.length > 0 ?
+                        <Line
+                            data={{
+                                labels: chartData.map(({ date }) => date),
+                                datasets: [
                                     {
-                                        type: "time",
-                                        time: {
-                                            parser: "MM/DD/YY",
-                                            tooltipFormat: "ll",
-                                        },
+                                        label: 'Cases',
+                                        data: chartData.map(({ cases }) => cases),
+                                        borderColor: '#3333ff',
+                                        fill: true,
                                     },
-                                ]
-                            }
-                        }}
-                    />
+                                    {
+                                        label: 'Deaths',
+                                        data: chartData.map(({ deaths }) => deaths),
+                                        fill: true,
+                                        backgroundColor: 'rgba(255,0,0,0.5)',
+                                        borderColor: 'red',
+                                    },
+                                    {
+                                        label: 'Recovered',
+                                        data: chartData.map(({ recovered }) => recovered),
+                                        fill: true,
+                                        backgroundColor: 'rgb(0,191,255, 0.5)',
+                                        borderColor: 'rgb(65,105,225)',
+                                    },
+
+                                ],
+                            }}
+
+                            options={{
+                                scales: {
+                                    xAxes: [
+                                        {
+                                            type: "time",
+                                            time: {
+                                                parser: "MM/DD/YY",
+                                                tooltipFormat: "ll",
+                                            },
+                                        },
+                                    ]
+                                }
+                            }}
+                        />
+                        : <p id='not-found'> Historical Data Not Found  </p >
                 }
 
             </div>
