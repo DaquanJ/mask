@@ -1,4 +1,5 @@
 import axios from 'axios';
+import numeral from 'numeral';
 import React, { useState, useEffect } from 'react';
 
 import { Line } from 'react-chartjs-2';
@@ -80,18 +81,18 @@ const Country = ({ match }) => {
                 <div className='cards' >
                     <div className='cases' >
                         <p> Cases </p>
-                        <h2 id='cases' > + {liveData.todayCases} </h2>
-                        <p> {liveData.cases} Total </p>
+                        <h2 id='cases' > {numeral(liveData.todayCases).format('+0,0')} </h2>
+                        <p> {numeral(liveData.cases).format('0,0')} Total </p>
                     </div>
                     <div className='deaths' >
                         <p> Deaths </p>
-                        <h2 id='deaths'> + {liveData.todayDeaths} </h2>
-                        <p> {liveData.deaths} Total </p>
+                        <h2 id='deaths'>  {numeral(liveData.todayDeaths).format('+0,0')} </h2>
+                        <p> {numeral(liveData.deaths).format('0,0')} Total </p>
                     </div>
                     <div className='recovered' >
                         <p> Recovered </p>
-                        <h2 id='recovered' > + {liveData.todayRecovered} </h2>
-                        <p> {liveData.recovered} Total </p>
+                        <h2 id='recovered' > {numeral(liveData.todayRecovered).format('+0,0')} </h2>
+                        <p> {numeral(liveData.recovered).format('0,0')} Total </p>
                     </div>
 
                 </div>
