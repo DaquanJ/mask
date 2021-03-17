@@ -9,7 +9,7 @@ https://disease.sh/
 ## technologies used
 languages - HTML5, CSS3, Javascript /
 dependencies - axios, react router /
-libraries/tools - React.js, react-chart.js
+libraries/tools - React.js, react-chart.js, numeral.js
 
 
 ## problem statement
