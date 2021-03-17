@@ -14,7 +14,8 @@
 }
 
 .cards div>p {
-    color: gray;
+    color: silver;
+    font-weight: bold;
 }
 
 .cases {
