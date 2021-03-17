@@ -40,3 +40,10 @@
 #recovered {
     color: rgb(0, 191, 255, 0.8);
 }
+
+@media (max-width: 850px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
+}

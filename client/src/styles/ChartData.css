@@ -72,3 +72,11 @@
     transition: all 200ms;
     cursor: pointer;
 }
+
+
+@media (max-width: 850px) {
+    .view {
+        display: flex;
+        flex-direction: column;
+    }
+}
