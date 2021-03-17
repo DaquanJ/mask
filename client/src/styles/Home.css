@@ -1,6 +1,6 @@
 .header {
     display: grid;
-    grid-template-columns: 90% 20%;
+    grid-template-columns: 85% 20%;
     width: auto;
 }
 
