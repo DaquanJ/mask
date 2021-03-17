@@ -27,18 +27,18 @@ const LiveData = () => {
                 <div className='cards' >
                     <div className='cases' >
                         <p> Cases </p>
-                        <h2 id='cases' > {numeral(data.todayCases).format('+0,0')} </h2>
-                        <p> {numeral(data.cases).format('0,0')} Total </p>
+                        <h2 id='cases' > {numeral(data.todayCases).format('+0.0a')} </h2>
+                        <p> {numeral(data.cases).format('0.0a')} Total </p>
                     </div>
                     <div className='deaths' >
                         <p> Deaths </p>
-                        <h2 id='deaths'> {numeral(data.todayDeaths).format('+0,0')} </h2>
-                        <p>  {numeral(data.deaths).format('0,0')} Total </p>
+                        <h2 id='deaths'> {numeral(data.todayDeaths).format('+0.0a')} </h2>
+                        <p>  {numeral(data.deaths).format('0.0a')} Total </p>
                     </div>
                     <div className='recovered' >
                         <p> Recovered </p>
-                        <h2 id='recovered' > {numeral(data.todayRecovered).format('+0,0')} </h2>
-                        <p> {numeral(data.recovered).format('0,0')} Total </p>
+                        <h2 id='recovered' > {numeral(data.todayRecovered).format('+0.0a')} </h2>
+                        <p> {numeral(data.recovered).format('0.0a')} Total </p>
                     </div>
 
                 </div>
