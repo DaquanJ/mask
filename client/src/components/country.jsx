@@ -38,7 +38,6 @@ const Country = ({ match }) => {
         try {
             const res = await axios.get(`https://disease.sh/v3/covid-19/countries/${match.params.country}?strict=true`)
             setLiveData(res.data)
-            console.log(res.data)
         } catch (error) {
             console.error(error)
         }
@@ -49,7 +48,6 @@ const Country = ({ match }) => {
             const res = await axios.get(`https://disease.sh/v3/covid-19/historical/${match.params.country}?lastdays=${days.lastDays}`)
             const newData = modifiedData(res.data.timeline)
             setChartData(newData)
-            console.log(newData)
         } catch (error) {
             console.error(error)
         }

@@ -13,7 +13,6 @@ const Countries = () => {
         try {
             const res = await axios.get('https://disease.sh/v3/covid-19/countries')
             setCountries(res.data)
-            console.log(res.data)
         } catch (error) {
             console.error(error)
         }

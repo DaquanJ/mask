@@ -12,7 +12,6 @@ const LiveData = () => {
             try {
                 const res = await axios.get('https://disease.sh/v3/covid-19/all')
                 setData(res.data)
-                console.log(res.data)
             } catch (e) {
                 console.error(e)
             }

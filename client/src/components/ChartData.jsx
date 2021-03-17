@@ -35,7 +35,6 @@ const ChartData = () => {
             const res = await axios.get(`https://disease.sh/v3/covid-19/historical/all?lastdays=${days.lastDays}`)
             const newChart = modifiedData(res.data)
             setHistoricalData(newChart);
-            console.log(res.data)
         } catch (error) {
             console.error(error)
         }
