@@ -1,5 +1,14 @@
 * {
   margin: auto;
   width: 95%;
+}
 
+body {
+  width: 100%;
+}
+
+@media (min-width: 1400px) {
+  * {
+    width: 90%;
+  }
 }
