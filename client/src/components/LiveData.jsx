@@ -1,4 +1,5 @@
 import axios from 'axios';
+import numeral from 'numeral';
 import React, { useState, useEffect } from 'react';
 
 import '../styles/liveData.css';
@@ -26,18 +27,18 @@ const LiveData = () => {
                 <div className='cards' >
                     <div className='cases' >
                         <p> Cases </p>
-                        <h2 id='cases' > + {data.todayCases} </h2>
-                        <p> {data.cases} Total </p>
+                        <h2 id='cases' > {numeral(data.todayCases).format('+0,0')} </h2>
+                        <p> {numeral(data.cases).format('0,0')} Total </p>
                     </div>
                     <div className='deaths' >
                         <p> Deaths </p>
-                        <h2 id='deaths'> + {data.todayDeaths} </h2>
-                        <p> {data.deaths} Total </p>
+                        <h2 id='deaths'> {numeral(data.todayDeaths).format('+0,0')} </h2>
+                        <p>  {numeral(data.deaths).format('0,0')} Total </p>
                     </div>
                     <div className='recovered' >
                         <p> Recovered </p>
-                        <h2 id='recovered' > + {data.todayRecovered} </h2>
-                        <p> {data.recovered} Total </p>
+                        <h2 id='recovered' > {numeral(data.todayRecovered).format('+0,0')} </h2>
+                        <p> {numeral(data.recovered).format('0,0')} Total </p>
                     </div>
 
                 </div>
