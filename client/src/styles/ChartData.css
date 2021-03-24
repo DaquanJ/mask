@@ -21,7 +21,7 @@
 
 .view {
     display: grid;
-    grid-template-columns: 60% 15% 15%;
+    grid-template-columns: 60% 20% 15%;
     justify-content: end;
     padding: 1%;
 
