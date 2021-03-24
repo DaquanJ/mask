@@ -2,6 +2,7 @@ import axios from 'axios';
 import numeral from 'numeral';
 import React, { useState, useEffect } from 'react';
 
+import { modifiedData } from '../lib/utils.js';
 import { Line } from 'react-chartjs-2';
 
 import '../styles/ChartData.css'
@@ -11,28 +12,6 @@ const Country = ({ match }) => {
     const [liveData, setLiveData] = useState([])
     const [chartData, setChartData] = useState([])
     const [days, setDays] = useState({ lastDays: '365' });
-
-
-    function modifiedData(data) {
-        let chart = [];
-        let point;
-
-        for (let date in data.cases) {
-            if (point) {
-                let newPoint = {
-                    date: date,
-                    cases: data.cases[date],
-                    deaths: data.deaths[date],
-                    recovered: data.recovered[date],
-                };
-                chart.push(newPoint);
-            }
-            point = data
-        }
-
-        return chart;
-    }
-
 
 
     async function getLiveData() {
