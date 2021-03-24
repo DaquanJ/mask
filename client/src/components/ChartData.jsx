@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
+import { modifiedData } from '../lib/utils.js';
 import axios from 'axios';
 
 import '../styles/ChartData.css'
@@ -9,26 +10,6 @@ const ChartData = () => {
     const [historicalData, setHistoricalData] = useState([]);
     const [days, setDays] = useState({ lastDays: '365' });
 
-
-    function modifiedData(data) {
-        let chart = [];
-        let point;
-
-        for (let date in data.cases) {
-            if (point) {
-                let newPoint = {
-                    date: date,
-                    cases: data.cases[date],
-                    deaths: data.deaths[date],
-                    recovered: data.recovered[date],
-                };
-                chart.push(newPoint);
-            }
-            point = data
-        }
-
-        return chart;
-    }
 
     async function getData() {
         try {
