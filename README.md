@@ -1,7 +1,7 @@
 # Covid Tracker App
 
 ## Deployed app
-...
+https://daquanj.github.io/mask
 
 ## which API I'm using
 https://disease.sh/
