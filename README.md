@@ -1,23 +1,60 @@
-# Covid Tracker App
+# Data Visualization App
 
-## Deployed app
-https://daquanj.github.io/mask/
+This web app is built using react and provides an interactive interface for data management and visualization. It displays data from the ```https://disease.sh/``` API in dynamic line charts using React Chart.js.
+
+### Live Web App
+
+- [https://daquanj.github.io/mask](https://daquanj.github.io/mask/)
+
+## Table of Contents
+- [Data Visualization App](#data-visualization-app)
+  - [Table of Contents](#table-of-contents)
+  - [Technologies Used](#technologies-used)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+   
+
+## Technologies Used
+
+- Javascript
+- React
+- React-Chart JS
+- Axios
+- React Router
+- Numeral JS
 
 ## which API I'm using
 https://disease.sh/
 
-## technologies used
-languages - HTML5, CSS3, Javascript |
-libraries/tools - React.js, axios, react router, react-chart.js, numeral.js
+## Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- **Node.js 14+** and npm for the React client
+- [Any other tools] (e.g., chrome)
 
 
-## problem statement
-A data visualization tool that displays the current and historical data on coronavirus globally, those of us who are watching closely to where we stand against the virus, as well as a close to the pandemic, can get an accurate and up to date look at some of the information helping guide health officials efforts.
+### Installation
 
-## target users
-Anyone who is interested in seeing the numbers and data visually, looking to compare data amongst countries and stay up to date with where we are in our efforts to overcome the pandemic. 
+1. **Clone the repository:**
+   
+   ```bash
+   git clone https://github.com/yourusername/your-client.git
+   cd your-client
 
+2. **Install client Dependencies:** Navigate to the ```client``` directory and install dependencies
 
-## wireframe
-![Mask wireframe](https://github.com/DaquanJ/mask/blob/main/client/wireframe/mask-wireframe.png "Mask")
+    ```bash
+    cd client
+    npm install
 
+### Running the Applications
+
+1. **Start the Client:** Open a new terminal, navigate to the ```client``` directory, and start the React app.
+   
+    ```bash
+    cd client
+    npm start
