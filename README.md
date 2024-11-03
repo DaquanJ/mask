@@ -24,7 +24,7 @@ This web app is built using react and provides an interactive interface for data
 - React Router
 - Numeral JS
 
-## which API I'm using
+## API Used
 https://disease.sh/
 
 ## Getting Started
